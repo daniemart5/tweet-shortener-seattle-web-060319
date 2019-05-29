@@ -6,9 +6,10 @@ def dictionary
 end
 
 def word_substituter(string)
-    string.collect do |word|
-    if word == substitutions
-      string.split = substitutions.keys
+    tweets = [string.split]
+    tweets.collect do |word|
+    if word == dictionary.keys
+      tweets = dictionary.keys
     end
   end
   word_substituter(string)
