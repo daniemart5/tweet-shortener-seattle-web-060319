@@ -9,8 +9,7 @@ end
 def word_substituter(string)
     tweets = [string.split]
     tweets.collect do |word|
-    if dictionary.keys.include?(word)
-      word.replace(dictionary.key)
+    if dictionary.keys.find {|key| dictionary.keys.include?(word) = key}
   end
  end
     return tweets.join(' ')
