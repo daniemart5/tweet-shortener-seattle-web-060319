@@ -1,8 +1,8 @@
 # Write your code here.
 require "pry"
 def dictionary
-  substitutions = {  hello: "hi",
-  to: "2", two: "2", too: "2", for: "4", four: "4", be: "b", you: "u", at: "@", and: "&"
+  substitutions = {  "hello": "hi",
+  "to": "2", "two": "2", "too": "2", "for": "4", "four": "4", "be": "b", "you": "u", "at": "@", "and": "&"
 }
 end
 
@@ -11,7 +11,7 @@ def word_substituter(string)
     tweets.collect do |word|
     if dictionary.keys.include?(word)
        dictionary.keys.find {|key| word == key}
-       word = dictionary[key]
+       word = dictionary[word]
   end
  end
     return tweets.join(' ')
