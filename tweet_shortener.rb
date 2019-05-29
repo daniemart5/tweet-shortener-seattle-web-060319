@@ -7,7 +7,7 @@ def dictionary
 end
 
 def word_substituter(string)
-    tweets = [string.split]
+    tweets = string.split
     tweets.collect do |word|
     if dictionary.keys.include?(word)
        dictionary.keys.find {|key| word == key}
