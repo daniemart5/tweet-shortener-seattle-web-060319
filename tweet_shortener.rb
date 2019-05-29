@@ -14,7 +14,7 @@ def word_substituter(string)
   word_substituter(string)
 end
 
-takes string(which first has to be an first array) and evaluates if a word matches the words in substitutions.
-if so we replace word with the shorter word
+#takes string(which first has to be an first array) and evaluates if a word matches the words in substitutions.
+#if so we replace word with the shorter word
 
-return the string
+#return the string
