@@ -9,10 +9,12 @@ end
 def word_substituter(string)
     tweets = [string.split]
     tweets.collect do |word|
-    word = dictionary.keys
+    if dictionary.keys.include?(word)
+      word.replace(dictionary.key)
   end
+ end
     return tweets.join(' ')
-end
+  end
 
 #takes string(which first has to be an first array) and evaluates if a word matches the words in substitutions.
 #if so we replace word with the shorter word
