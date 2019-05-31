@@ -7,10 +7,10 @@ def dictionary
 end
 
 def word_substituter(string)
-    tweets = string.split
+    tweets = string.split(' ')
     words = tweets.collect do |word|
-      if dictionary.keys.include?(word.to_sym)
-         dictionary[word.to_sym]
+      if dictionary.keys.include?(word.downcase.to_sym)
+         dictionary[word.downcase.to_sym]
          #binding.pry
        else
          word
@@ -19,9 +19,25 @@ def word_substituter(string)
   words.join(' ')
 end
 
-def bulk_tweet_shortener(array)
-  array.each do |tweet|
-   new_tweets = word_substituter(tweet)
-   puts new_tweets
+def bulk_tweet_shortener(tweet)
+   tweet.each do |tweeted|
+     puts word_substituter(tweeted)
+   end
+end
+
+def selective_tweet_shortener(tweet)
+   if tweet.length > 140
+      word_substituter(tweet)
+   else
+      tweet
+   end
+end
+
+def shortened_tweet_truncator(tweet)
+  if tweet.length > 140
+      word_substituter(tweet)
+      tweet[0..136] + "..."
+    else
+        tweet
   end
 end
